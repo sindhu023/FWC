@@ -1,0 +1,167 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+%
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{xcolor}
+\usepackage{caption}
+%\usepackage{subcaption}
+%\doublespacing
+\singlespacing
+
+\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+\usepackage[cmex10]{amsmath}
+\usepackage{mathtools}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+%\usepackage{xtab}
+\usepackage{longtable}
+\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{enumitem}
+\usepackage{mathtools}
+%\usepackage{eenrc}
+%\usepackage[framemethod=tikz]{mdframed}
+\usepackage{hyperref}
+\usepackage{listings}
+    \usepackage[latin1]{inputenc}                                 %%
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+    \usepackage{lscape}     
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{karnaugh-map}
+\usepackage{pgf}
+
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
+
+
+%\usepackage{stmaryrd}
+
+
+%\usepackage{wasysym}
+%\newcounter{MYtempeqncnt}
+\DeclareMathOperator*{\Res}{Res}
+%\renewcommand{\baselinestretch}{2}
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+
+%\surroundwithmdframed[width=\columnwidth]{lstlisting}
+\def\inputGnumericTable{}                                 %%
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+ 
+
+\begin{document}
+%
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}{Definition}[section]
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\vspace{3cm}
+\title{ 
+Assignmet 1 : XOR logic Implementation
+}
+
+\author{B.Sai Sindhu}
+
+
+\maketitle
+\tableofcontents
+\bigskip
+%
+%\newpage
+\section{Abstract}
+
+In the ciruit X and Y are digital inputs, Z is digital output.The equivalent circuit is the logic implementation of XOR Gate.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{xor.png}
+    \caption{Z=X!Y+!XY}
+    %\caption{Circuit}
+    \label{fig:circuit}
+\end{figure}
+\section{\textbf{Components}}
+\input{components}
+\begin{table}[!h]
+\centering
+%\input{./figs/7447_disp.tex}
+%\input{7447_disp}
+\caption{}
+\label{table:7447_disp}
+\end{table}
+\begin{figure}
+    \centering
+    \includegraphics{seven.png}
+    \caption{Seven segment display}
+    \label{fig:my_label}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{sevenseg.png}
+    \caption{}
+    \label{fig:my_label}
+\end{figure}
+%\section{Procedure}
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{ic7447.png}
+    \caption{}
+    \label{fig:my_label}
+\end{figure}
+\section{Procedure}
+
+1. Connect the circuit as inputs to 0 and 1\\
+2.Connect A pin of 7447 to D2.\\
+3. Connect B,C and D pins of 7447 to GND.\\
+4. Vary the D5 and D6 and observe the output 
+accordingly in the seven segment display.
+
+\textbf{Observe the circuit by executing the link provided below.}\\
+\begin{center}
+\fbox{\parbox{8.5cm}{\url{https://github.com/sindhu023/FWC/ide}}}
+\end{center}
+\end{document}
