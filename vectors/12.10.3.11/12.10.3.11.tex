@@ -1,0 +1,71 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\usepackage[none]{hyphenat}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[english]{babel}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption} 
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amssymb} % for \because
+\usepackage{amsmath}   % for having text in math mode
+\usepackage{extarrows} % for Row operations arrows
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\lstset{
+  frame=single,
+  breaklines=true
+}
+\usepackage{hyperref}
+  
+%Following 2 lines were added to remove the blank page at the beginning
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+
+%New macro definitions
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\let\vec\mathbf{}
+\begin{document}
+
+\begin{center}
+\title{\textbf{Vector Algebra}}
+\date{\vspace{-5ex}} %Not to print date automatically
+\maketitle
+\end{center}
+
+\section{12$^{th}$ Maths - Chapter 10}
+This is Problem 11 from Exercise-10.3
+\begin{enumerate}
+\item Show that $\abs{\overrightarrow{a}}\overrightarrow{b}+\abs{\overrightarrow{b}}\overrightarrow{a}$ is perpendicular to $\abs{\overrightarrow{a}}\overrightarrow{b}-\abs{\overrightarrow{b}}\overrightarrow{a}$, for any two nonzero vectors $\overrightarrow{a}$ and $\overrightarrow{b}$\\  
+
+\solution
+From the given information
+
+\begin{align}
+\brak{\norm{\vec{a}}\vec{b}+\norm{\vec{b}}\vec{a}}^\top\brak{\norm{\vec{a}}\vec{b}-\norm{\vec{b}}\vec{a}}\\
+\implies \norm{\vec{a}}^\top\vec{b}^\top\norm{\vec{a}}\vec{b}-\norm{\vec{a}}^\top\vec{b}^\top\norm{\vec{b}}\vec{a}+\norm{\vec{b}}^\top\vec{a}^\top\norm{\vec{a}}\vec{b}-\norm{\vec{b}}^\top\vec{a}^\top\norm{\vec{b}}\vec{a}\\
+\implies \norm{\vec{a}}^2\vec{b}^\top\vec{b}-\norm{\vec{a}}\norm{\vec{b}}\vec{b}^\top\vec{a}+\norm{\vec{a}}\norm{\vec{b}}\vec{a}^\top\vec{b}-\norm{\vec{b}}^2\vec{a}^\top\vec{a}
+\end{align}
+we know that
+\begin{align}
+    \vec{a}^{\top}\vec{a} = \norm{\vec{a}}^2
+    \label{eq1}  \\
+    \vec{b}^{\top}\vec{b} = \norm{\vec{b}}^2
+    \label{eq2}  \\
+    \vec{a}^{\top}\vec{b} = \vec{b}^{\top}\vec{a}
+    \label{eq3}
+\end{align}
+By using \eqref{eq1} and \eqref{eq2} and \eqref{eq3}
+\begin{align}
+	\implies\norm{\vec{a}}^2\norm{\vec{b}}^2&-\norm{\vec{b}}^2\norm{\vec{a}}^2=0
+\end{align}
+\end{enumerate}
+\end{document}
