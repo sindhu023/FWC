@@ -1,0 +1,114 @@
+\documentclass[10pt]{article}
+\usepackage{graphicx}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage[none]{hyphenat}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[english]{babel}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption} 
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{gensymb}
+\usepackage{amssymb} % for \because
+\usepackage{amsmath}   % for having text in math mode
+\usepackage{extarrows} % for Row operations arrows
+\usepackage{listings}
+%\usepackage[utf8]{inputenc}
+\lstset{
+  frame=single,
+  breaklines=true
+}
+\usepackage{hyperref}
+\usepackage[margin=0.5in]{geometry}
+  
+%Following 2 lines were added to remove the blank page at the beginning
+\usepackage{atbegshi}% http://ctan.org/pkg/atbegshi
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
+
+%New macro definitions
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\let\vec\mathbf{}
+\begin{document}
+
+\begin{center}
+\title{\textbf{CIRCLES}}
+\date{\vspace{-5ex}} %Not to print date automatically
+\maketitle
+\end{center}
+\section{9$^{th}$ Maths - Chapter 10}
+
+This is Problem 2 from Exercise-10.6\\\\
+Two chords AB and CD of lengths 5 cm and 11 cm respectively of a circle are parallel
+to each other and are on opposite sides of its centre. If the distance between AB and
+CD is 6 cm, find the radius of the circle.
+\section{construction}
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=5in]{./figs/fig.png}
+	\end{center}
+\caption{}
+\label{fig:Fig1}
+\end{figure}
+The input parameters for this construction are\\
+\begin{table}[h!]
+	\centering
+	\input{/sdcard/Download/codes/circles/9.10.6.2/table/table.tex}
+\label{table:1}
+\end{table}\\
+\begin{align}
+\vec{A}=r\myvec{\cos{\theta_1}\\\sin{\theta_1}},\vec{B}=r\myvec{\cos{\theta_2}\\\sin{\theta_2}},\vec{C}=r\myvec{\cos{\theta_3}\\\sin{\theta_3}},\vec{D}=r\myvec{\cos{\theta_4}\\\sin{\theta_4}}
+\end{align}
+\solution
+Lines AB and CD are parallel.\\
+Therefore,\\
+\begin{align}
+\vec{m_1}=&\vec{m_2}\\
+\myvec{\cos{\theta_1}-\cos{\theta_2}\\\sin{\theta_1}-\sin{\theta_2}}=&\myvec{\cos{\theta_3}-\cos{\theta_4}\\\sin{\theta_3}-\sin{\theta_4}}\\
+\implies\myvec{1\\-1}=&\myvec{1\\-1}
+\label{eq:1}
+\end{align}
+from \eqref{eq:1} the normal vector is given by
+\begin{align}
+\vec{n}=\myvec{-1\\-1}
+\end{align}
+The line equation of AB is 
+\begin{align}
+r\myvec{-1&-1}\vec{x}=&r^2\myvec{-1&-1}\myvec{1\\0}\\
+\myvec{-1&-1}=&-r
+\label{eq:2}
+\end{align}
+The line equation of CD is 
+\begin{align}
+r\myvec{-1&-1}\vec{x}=&r^2\myvec{-1&-1}\myvec{0\\-1}\\
+\myvec{-1&-1}=&r
+\label{eq:3}
+\end{align}
+from \eqref{eq:2} and \eqref{eq:3}
+\begin{align}
+c_1=-r,c_2=r
+\end{align}
+The distance between parallel lines is
+\begin{align}
+d=&\frac{\abs{c_1-c_2}}{\norm{\vec{n}}}\\
+\implies 6=&\frac{2r}{\sqrt{2}}\\
+\implies r=&4.24
+\end{align}
+\end{document}
